@@ -1,7 +1,7 @@
 {
   "name": "Valley Ease",
   "short_name": "Valley",
-  "start_url": "/en",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#fff",
   "description": "Personal blog of VALLEY.",
