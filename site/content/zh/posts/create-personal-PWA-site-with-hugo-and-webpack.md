@@ -147,7 +147,7 @@ Total in 27 ms
 Netlify 会自动赋予项目一个子域名，如果想自定义域名，可以参考官方文档[^fn5]，学生一般可以申请 Github 学生套餐[^fn6]，可以获得一个免费的 [Namecheap][] 域名
 以及 SSL 证书，SSL 配置可以参考官方文档[^fn7]，Namecheap 域名关联 Netlify 如下：
 
-![audits](/src/img/posts/20181202_Create-a-minimal-site-with-hugo-and-webpack/domain.webp)
+![domain](/src/img/posts/20181223_create-personal-PWA-site-with-hugo-and-webpack/domain.webp)
 
 ### 性能优化
 
@@ -235,16 +235,16 @@ Content-Type: text/html; charset=UTF-8
 Chrome 自带的调试工具可以进行网络调试、性能调试以及服务工作线程调试，正常的网络请求测试如下图，
 主要围绕加载顺序、异步加载、资源压缩、代码拆分等做了优化。
 
-![audits](/src/img/posts/20181202_Create-a-minimal-site-with-hugo-and-webpack/performance.webp)
+![performance](/src/img/posts/20181223_create-personal-PWA-site-with-hugo-and-webpack/performance.webp)
 
 服务工作线程启用后会拦截请求，将浏览器缓存的数据返回给用户，因此几乎等同于本地加载，整个请求延时非常短，并且可以在一定时间范围内实现离线访问。
 
-![audits](/src/img/posts/20181202_Create-a-minimal-site-with-hugo-and-webpack/serviceworker.webp)
+![serviceworker](/src/img/posts/20181223_create-personal-PWA-site-with-hugo-and-webpack/serviceworker.webp)
 
 最后，运用 lighthouse 进行性能测试，并有针对性的进行优化，主要优化方面包括页面性能、渐进式 (PWA)、可访问性、最佳实践、SEO，
 经过循序渐进的优化后达到了满意的程度。
 
-![audits](/src/img/posts/20181202_Create-a-minimal-site-with-hugo-and-webpack/audits.webp)
+![audits](/src/img/posts/20181223_create-personal-PWA-site-with-hugo-and-webpack/audits.webp)
 
 ### 总结
 
