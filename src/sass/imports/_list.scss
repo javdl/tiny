@@ -1,0 +1,81 @@
+.article-head {
+  h1 {
+    font-size: calc(1.6rem + 0.8vw) !important;
+    color: $gray-900;
+    transition: all 0.25s ease-in;
+
+    @include hover-focus {
+      opacity: 0.75;
+    }
+  }
+
+  .divider {
+    padding: 0 0.3em;
+    &:after {
+      content: "\00B7";
+    }
+  }
+
+  svg {
+    vertical-align: middle;
+    padding: 0.2em 0 0.4em 0;
+  }
+
+  @media screen and(max-width: 767px) {
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.article-summary {
+  p {
+    font-size: 1.4rem;
+    text-indent: 2em;
+  }
+
+  @media screen and(max-width: 767px) {
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.pagination {
+  padding-top: 2rem;
+  position: relative;
+
+  span {
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .top {
+    transition: all 0.3s ease-out;
+    font-size: 1.1rem;
+    opacity: 0.6;
+
+    @include hover {
+      opacity: 1;
+    }
+  }
+
+  .arrow {
+    color: $gray-600;
+    transition: all 0.3s ease-out;
+    position: absolute;
+
+    @include hover-focus {
+      opacity: 0.6;
+    }
+  }
+
+  .left {
+    left: 0;
+  }
+
+  .right {
+    right: 0;
+  }
+}

@@ -1,0 +1,15 @@
+- id: quote
+  translation: "不积跬步，无以至千里；不积小流，无以成江海"
+- id: quote-font
+  translation: "STXingkai, STKaiti, KaiTi"
+- id: search-placeholder
+  translation: "搜索..."
+
+- id: home
+  translation: "主页"
+- id: post
+  translation: "博客"
+- id: mood
+  translation: "心境"
+- id: arch
+  translation: "⁞"

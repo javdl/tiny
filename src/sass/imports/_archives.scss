@@ -1,0 +1,61 @@
+.time_line {
+  margin: 1rem 0;
+  padding-left: 4rem;
+  text-align: left;
+  font-weight: $font-weight-500;
+  line-height: 1.2rem;
+  letter-spacing: 0.0625rem;
+  overflow: hidden;
+
+  .time_line-title {
+    margin-bottom: 1.6rem;
+  }
+  .time_line-item {
+    display: flex;
+    margin-bottom: 1.2rem;
+    position: relative;
+    &::before {
+      background: $gray-200;
+      content: "";
+      height: 100%;
+      position: absolute;
+      left: 0.8rem;
+      top: 1.2rem;
+      width: 1px;
+    }
+
+    .time_line-content {
+      flex: 1 1 auto;
+      padding: 1rem;
+    }
+
+    .time_line-layout{
+      padding-left: 2rem;
+      h1{
+        font-size: calc(1.5rem + 0.5vw);
+      }
+    }
+
+    .time_line-icon {
+      padding-left: 0.6rem;
+      font-size: 0.5rem;
+      &:before {
+        content: "\26AC";
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 767px) {
+  .time_line {
+    padding-left: 1rem;
+    .time_line-layout {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.article-tags {
+  font-size: 0.9rem;
+  text-align: left;
+}

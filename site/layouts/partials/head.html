@@ -1,0 +1,134 @@
+<head>
+  <!-- Code Style -->
+  {{if .IsPage}}
+  {{ $minor := .Site.Data.asserts.minor }}
+  {{ $style_minor := resources.Get "minor.bundle.css" }}
+  {{ with $minor.js }}
+  <script
+    async
+    type="text/javascript"
+    crossorigin="anonymous"
+    src="{{ relURL . }}"
+  ></script>
+  {{end}}
+  <style>{{ $style_minor.Content | safeCSS }}</style>
+  {{ $.Scratch.Set "style_minor" . }}
+  {{ end }}
+  {{ $.Scratch.Set "minor" . }}
+  <!-- Code Style -->
+
+  <meta charset="UTF-8"/>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1"/>
+  {{ .Hugo.Generator }}
+
+  <title>
+    {{- block "title" . -}}
+    {{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}
+    {{- end -}}
+  </title>
+
+  {{if .Params.description }}
+  <meta name="description" content="{{ .Params.description }}"/>
+  {{else}}
+  {{ with .Site.Params.description }}
+  <meta name="description" content="{{ . }}"/>
+  {{ end }}
+  {{end}}
+
+  {{ with .Site.Params.author }}
+  <meta name="author" content="{{ . }}"/>
+  {{ end }}
+
+  <meta name="HandheldFriendly" content="True"/>
+  <meta name="MobileOptimized" content="320"/>
+  <link rel="manifest" href="{{.Site.Params.Manifest | absURL }}"/>
+  <meta name="theme-color" content="#fff"/>
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="VALLEY">
+  <link rel="apple-touch-icon" sizes="180x180" href={{absURL "/src/img/icons/android-chrome-192x192.png"}}/>
+
+  <link href={{absURL "/src/img/icons/screen/iphone5_splash.png" }}
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+  <link href={{absURL "/src/img/icons/screen/iphone6_splash.png"}}
+        media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+  <link href={{absURL "/src/img/icons/screen/iphoneplus_splash.png"}}
+        media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)"
+        rel="apple-touch-startup-image" />
+  <link href={{absURL "/src/img/icons/screen/iphonex_splash.png"}}
+        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
+        rel="apple-touch-startup-image" />
+  <link href={{absURL "/src/img/icons/screen/iphonexr_splash.png"}}
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+  <link href={{absURL "/src/img/icons/screen/iphonexsmax_splash.png"}}
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"
+        rel="apple-touch-startup-image" />
+  <link href={{absURL "/src/img/icons/screen/ipad_splash.png"}}
+        media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+  <link href={{absURL "/src/img/icons/screen/ipadpro1_splash.png"}}
+        media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+  <link href={{absURL "/src/img/icons/screen/ipadpro3_splash.png"}}
+        media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+  <link href={{absURL "/src/img/icons/screen/ipadpro2_splash.png"}}
+        media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+
+  {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") }}
+  {{- template "_internal/opengraph.html" . -}}
+  {{- template "_internal/google_news.html" . -}}
+  {{- template "_internal/schema.html" . -}}
+  {{- template "_internal/twitter_cards.html" . -}}
+  {{end}}
+
+  {{ if .RSSLink }}
+  <link
+    href="{{ .RSSLink }}"
+    rel="alternate"
+    type="application/rss+xml"
+    crossorigin="anonymous"
+    title="{{ .Site.Title }}"
+  />
+  <link
+    href="{{ .RSSLink }}"
+    rel="feed"
+    type="application/rss+xml"
+    crossorigin="anonymous"
+    title="{{ .Site.Title }}"
+  />
+  {{ end }}
+
+  <!-- Main Style -->
+  {{ $style_main := resources.Get "main.bundle.css" | minify | fingerprint }}
+  {{ with $style_main }}
+  <link rel="stylesheet" href="{{ .Permalink | relURL }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+  {{ $.Scratch.Set "style_main" . }}
+  {{end}}
+  <!-- Main Style -->
+
+  <!-- Article Style -->
+  {{ if or (eq .Section "posts") (eq .Section "mood") }}
+  {{ $style_article := resources.Get "article.bundle.css" }}
+  <style>{{ $style_article.Content | safeCSS }}</style>
+  {{ $.Scratch.Set "style_article" . }}
+  {{ end }}
+  <!-- Article Style -->
+
+  <!-- Archive Style -->
+  {{ if eq .Section "archives" }}
+  {{ $style_archive := resources.Get "archive.bundle.css" }}
+  <style>{{ $style_archive.Content | safeCSS }}</style>
+  {{ $.Scratch.Set "style_archive" . }}
+  {{ end }}
+  <!-- Archive Style -->
+</head>

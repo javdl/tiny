@@ -1,0 +1,15 @@
+- id: quote
+  translation: "A journey of a thousand miles begins with a single step"
+- id: quote-font
+  translation: "serif, cursive, Georgia"
+- id: search-placeholder
+  translation: "Search..."
+
+- id: home
+  translation: "Home"
+- id: post
+  translation: "Post"
+- id: mood
+  translation: "Mood"
+- id: arch
+  translation: "⁞"

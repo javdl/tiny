@@ -1,0 +1,63 @@
+main {
+  padding-top: 64px;
+  margin: auto;
+  flex: 1 0 auto;
+  width: 100%;
+  min-height: 100vh;
+}
+
+footer {
+  margin: 1rem auto;
+  border-top: 1px solid $gray-300;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: $font-weight-600;
+  line-height: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  z-index: $navbar-z-index;
+  .flag {
+    width: 2em;
+  }
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+@media (max-width: 400px) {
+  .footer {
+    letter-spacing: 0 !important;
+  }
+
+  .p-2{
+    padding: 0.5rem 0;
+  }
+}
+
+.mt-4 {
+  margin-top: 1rem !important;
+}
+
+.d-flex {
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.mr-2 {
+  margin-right: 0.5rem !important;
+}
+
+.sprite{
+  svg{
+    width:0;
+    height:0;
+    visibility:hidden;
+    position:absolute;
+    z-index:-1
+  }
+}

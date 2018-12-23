@@ -1,0 +1,53 @@
+<footer class="container">
+  <div class="p-2">
+    <div class="pb-2 mt-4">
+      {{ if $.Site.Params.github }}
+      <a href="{{ $.Site.Params.github }}" aria-label="Github" target="_blank" rel="noopener">
+        <svg class="mr-3">
+          <use xlink:href="#github"/>
+        </svg>
+      </a>
+      {{ end }}
+
+      {{ if $.Site.Params.gmail }}
+      <a href="mailto:{{ $.Site.Params.gmail }}" aria-label="Gmail" target="_blank" rel="noopener">
+        <svg class="mr-3">
+          <use xlink:href="#google"/>
+        </svg>
+      </a>
+      {{ end }}
+
+      {{ if .RSSLink }}
+      <a href="{{ .Permalink }}index.xml" aria-label="RSS" target="_blank" rel="noopener">
+        <svg class="mr-3">
+          <use xlink:href="#rss"/>
+        </svg>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="d-flex">
+    <div class="p-2 text-muted">
+      ©
+      {{ .Site.Params.author }}
+      •
+      {{ .Site.Params.copyright }}
+
+      {{ now.Format "2006" }}
+    </div>
+
+    <div class="ml-auto p-2">
+      {{ range $.Site.Home.AllTranslations }}
+      <a href="{{ .Permalink }}" aria-label="Lang">
+        {{ with.Language.LanguageName }}
+        <svg class="mr-2 flag">
+          <use xlink:href="#{{ . }}"/>
+        </svg>
+        {{ end }}
+      </a>
+      {{ end }}
+      <span class="text-muted">ཁམས༌བཟང༌།</span>
+    </div>
+  </div>
+</footer>

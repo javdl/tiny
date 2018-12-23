@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /en/
+Allow: /zh/
+
+Disallow: /src/
+
+Disallow: /*.js$
+Disallow: /*.json$
+Disallow: /*.css$
+
+Sitemap: https://valleyease.me/sitemap.xml

@@ -1,0 +1,29 @@
+{{ define "main" }}
+<main>
+  {{ if .Params.image }}
+  <header>
+    <div class="article-img-container">
+      <div class="article-img" style="background-image: url('{{ .Params.image | absURL }}')">
+      </div>
+    </div>
+  </header>
+  {{ end }}
+
+  <article class="container">
+    {{ partial "list-head.html" . }}
+    <div class="article-content text-justify">{{ .Content }}</div>
+
+    <section class="pagination">
+      {{- if .NextPage }}
+      <a href="{{ .NextPage.URL }}" class="left arrow">←</a>
+      {{end}}
+      {{- if .PrevPage }}
+      <a href="{{ .PrevPage.URL }}" class="right arrow">→</a>
+      {{end}}
+      <span>
+          <a href="#">↑</a>
+        </span>
+    </section>
+  </article>
+</main>
+{{end}}

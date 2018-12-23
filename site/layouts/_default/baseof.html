@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="{{ with $.Site.LanguageCode }}{{ . }}{{ else }}en-us{{ end }}">
+  {{- partial "head.html" . -}}
+  <body>
+    {{- partial "sprite-tool.html" . -}}
+    {{- partial "header.html" . -}}
+    {{- block "main" . }}{{- end }}
+    {{- partial "footer.html" . -}}
+  </body>
+  {{- partial "foot.html" . -}}
+</html>

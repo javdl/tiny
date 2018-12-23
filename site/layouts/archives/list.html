@@ -1,0 +1,31 @@
+{{ define "main" }}
+<main class="container">
+  {{- partial "sprite-tag.html" . -}}
+  <div class="time_line text-muted">
+    {{ range (where .Site.Pages "Kind" "page").GroupByDate "2006" }}
+    <h2>{{ .Key }}</h2>
+
+    {{ range .Pages }}
+    <div class="time_line-item">
+      <span class="time_line-icon"></span>
+      <article class="time_line-content">
+        <p>{{ .Date.Format "01-02" }}</p>
+        <div class="time_line-layout">
+          <a href="{{ .Permalink }}"><h1>{{ .Title }}</h1></a>
+          <div class="mt-4 article-tags">
+            {{ range .Params.tags }}
+            <a aria-label="{{.}}" href='{{ "/" | relLangURL}}/tags/{{.}}'>
+              <svg class="mr-3">
+                <use xlink:href="#{{.}}"/>
+              </svg>
+            </a>
+            {{ end }}
+          </div>
+        </div>
+      </article>
+    </div>
+    {{ end }}
+    {{ end }}
+  </div>
+</main>
+{{end}}

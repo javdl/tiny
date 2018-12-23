@@ -1,0 +1,5 @@
+<section class="sprite" >
+  {{ $tag := resources.Get "sprite_tag.svg"  }}
+  {{ $tag.Content | safeHTML }}
+  {{ $.Scratch.Set "tag" . }}
+</section>

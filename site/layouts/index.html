@@ -1,0 +1,12 @@
+{{ define "main" }}
+<main class="home">
+  <header>
+    <div class="home_cover" id="main_cover"
+         style='background-image: url("{{ .Site.Params.mainIMG }}"); transform: translate3d(0px, 0px, 0px);'></div>
+  </header>
+
+  <section class="container bg-transparent">
+    <h1 class="text-justify" style="font-family: {{ i18n "quote-font" }}">{{ i18n "quote" }}</h1>
+  </section>
+</main>
+{{ end }}

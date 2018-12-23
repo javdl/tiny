@@ -1,0 +1,19 @@
+{{ .Date.Format (.Site.Params.dateFormat | default "Jan 2, 2006") | $.Scratch.Set "subtitle" }}
+{{ with .FuzzyWordCount }} {{ $.Scratch.Set "reading" . }} {{ end }}
+
+<div class="article-head">
+  <a class="nav-link" href="{{ .Permalink }}"><h1>{{ .Title }}</h1></a>
+  <p class="text-muted">
+    <svg>
+      <use xlink:href="#calendar"/>
+    </svg>
+    {{ $.Scratch.Get "subtitle" }}
+
+    <span class="divider"></span>
+
+    <svg>
+      <use xlink:href="#clock"/>
+    </svg>
+    {{ $.Scratch.Get "reading" | div 250.0 | div 1.0 | math.Ceil }} Min read
+  </p>
+</div>

@@ -1,0 +1,13 @@
+[context.production.environment]
+HUGO_VERSION = "0.52"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
+
+[build.environment]
+  YARN_VERSION = "1.12.1"
+  NPM_VERSION = "6.4.1"
+  HUGO_VERSION = "0.52"
+
+[build]
+  command = "yarn build"
+  publish = "dist"

@@ -1,0 +1,20 @@
+<article>
+  {{ partial "list-head.html" . }}
+  <div class="summary text-justify">
+    <div class="article-summary">
+      <p class="text-secondary">
+        {{ if .Params.description }}
+        {{ .Params.description }}
+        {{ else }}
+        {{ .Summary | plainify | safeHTML }}
+        {{ end }}
+        {{ if .Truncated }}
+        <a href="{{ .Permalink }}">
+          »
+        </a>
+        {{ end }}
+      </p>
+    </div>
+  </div>
+  <hr>
+</article>

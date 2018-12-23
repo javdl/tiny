@@ -1,0 +1,5 @@
+<section class="sprite" >
+  {{ $tool := resources.Get "sprite_tool.svg"  }}
+  {{ $tool.Content | safeHTML }}
+  {{ $.Scratch.Set "tool" . }}
+</section>

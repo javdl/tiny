@@ -1,0 +1,39 @@
+{{ $main := .Site.Data.asserts.main }}
+{{ with $main.js }}
+<script
+  async
+  type="text/javascript"
+  crossorigin="anonymous"
+  src="{{ relURL . }}"
+></script>
+{{ $.Scratch.Set "main" . }}
+{{end}}
+
+{{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") }}
+<!-- Google Analytics -->
+{{ if .Site.GoogleAnalytics }}
+{{ template "_internal/google_analytics_async.html" . }}
+{{ end }}
+<!-- Google Analytics -->
+
+
+<!-- Service Worker -->
+{{ $sw := resources.Get "sw.js" | minify | fingerprint }}
+<script>
+  if ('serviceWorker' in navigator) {
+    // Use the window load event to keep the page load performant
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+        .register({{ $sw.RelPermalink | safeURL}}, {scope: '/'})
+    .then(function (reg) {
+        window.sw = reg
+      })
+        .catch(function (err) {
+          console.error('Failed to load service worker: ', err)
+        })
+    })
+  }
+</script>
+{{ $.Scratch.Set "sw" . }}
+<!-- Service Worker -->
+{{ end }}

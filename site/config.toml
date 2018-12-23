@@ -1,0 +1,108 @@
+### GENERAL SETUP ###
+
+baseURL = "https://www.valleyease.me/"
+title = "VALLEY"
+# languages
+languageCode = "en-us"
+hasCJKLanguage = true
+# Default language to use
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+relativeURLs = true
+enableEmoji = true
+# Override "return" link in page footnotes with unicode character.
+footnoteReturnLinkContents = "↵"
+
+googleAnalytics = "UA-130553314-1"
+
+[taxonomies]
+  tag = "tags"
+
+# URL Management
+[permalinks]
+  posts  = "/:year/:month/:day/:title/"
+  mood   = "/:year/:month/:day/:title/"
+
+### OUTPUTS ###
+
+# JSON format of article titles for client-side search.
+[outputFormats.Titles]
+  baseName        = "titles"
+  isPlainText     = true
+  mediaType       = "application/json"
+  notAlternative  = true
+
+[params.titles]
+  vars = ["title", "permalink"]
+
+[outputs]
+  home = ["HTML", "RSS", "Titles"]
+
+### CUSTOM PARAMS ###
+
+[params]
+  ## Used for views in rendered HTML (i.e., rather than using the .Hugo variable)
+  release = "0.52"
+
+  navigation = ["archives.md", "about.md"]
+  author = "Valley"
+  description = "The personal website of Valley"
+  copyright = "ease"
+
+  # social
+  github  = "https://github.com/ValleyZw"
+  gmail   = "valley.zw@gmail.com"
+
+  ## Resource urls
+  mainIMG       = "/src/img/icons/main/main.svg"
+  mainJS        = "/main.bundle.js"
+  secondaryJS   = "/minor.bundle.js"
+  mainCSS       = "/main.bundle.css"
+  secondaryCSS  = "/minor.bundle.css"
+  toolSVG       = "/src/svg/sprite_tool.svg"
+  tagSVG        = "/src/svg/sprite_tag.svg"
+  manifest      = "/manifest.json"
+
+### MARKDOWN ###
+
+[blackfriday]
+	plainIDAnchors  = true
+	hrefTargetBlank = false
+  angledQuotes    = false
+  latexDashes     = true
+
+### MENUS ###
+
+[[menu.main]]
+  url = "/"
+  name = "home"
+  weight = 1
+
+[[menu.main]]
+  url = "/posts/"
+  name = "post"
+  weight = 2
+
+[[menu.main]]
+  url = "/mood/"
+  name = "mood"
+  weight = 3
+
+[[menu.main]]
+  url = "/archives/"
+  name = "arch"
+  weight = 4
+
+### LANGUAGES ###
+
+[languages]
+  # English
+  [languages.en]
+    languageName = "en"
+    contentDir = "content/en"
+    weight = 1
+  # Chinese
+  [languages.zh]
+    languageName = "zh"
+    contentDir = "content/zh"
+    weight = 2

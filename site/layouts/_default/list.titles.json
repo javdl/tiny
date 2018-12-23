@@ -1,0 +1,9 @@
+{{/* Generates a valid search index with title and link */}}
+{{- $.Scratch.Add "index" slice -}}
+{{- $section := $.Site.GetPage "section" .Section }}
+{{- range where (where .Site.Pages "Type" "in" (slice "posts" "mood")) "IsPage" true -}}
+{{- if or (and (.IsDescendant $section) (and (not .Draft) (not .Params.private))) $section.IsHome -}}
+{{- $.Scratch.Add "index" (dict  "value" .Permalink "label" .Title )}}
+{{- end -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}

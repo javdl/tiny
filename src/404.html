@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Page not found • VALLEY</title>
+  <style type="text/css" media="screen">
+    body {
+      background-color: white;
+    }
+
+    .error {
+      margin-top: 15vh;
+      text-align: center;
+      clear: both;
+      font-size: 10vw;
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: all 0.2s ease-in;
+    }
+
+    span {
+      color: rgba(0, 0, 0, 0.5);
+      padding: 0 10px;
+    }
+
+    span:after {
+      content: "\0034";
+    }
+
+    .cover {
+      display: inline-block;
+      background: url("/src/img/icons/main/error.svg") center center no-repeat;
+      height: 8vw;
+      width: 8vw;
+    }
+
+    p {
+      font-size: calc(1.5rem + 1vw);
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 767px) {
+      .error {
+        font-size: 4rem;
+        font-weight: 400;
+      }
+
+      .cover {
+        height: 48px;
+        width: 48px;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+
+    .divider {
+      width: 100%;
+      margin: 5rem auto 1rem;
+    }
+
+    .divider hr {
+      border: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      width: 40%;
+    }
+
+    .divider a {
+      font-size: calc(1.5rem + 1vw);
+      transition: all 0.25s ease-in;
+      color: rgba(0, 0, 0, 0.5);
+      text-decoration: none;
+      background-color: transparent;
+    }
+
+    .divider a:hover {
+      color: rgba(0, 0, 0, 0.7);
+      text-decoration: none;
+    }
+
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+    }
+  </style>
+</head>
+<body>
+<main class="error">
+  <span></span>
+  <div class="cover"></div>
+  <span></span>
+  <p>not found</p>
+
+  <div class="divider">
+    <hr class="left"/>
+    <a href="/" aria-label="home">✈</a>
+    <hr class="right"/>
+  </div>
+</main>
+</body>
+</html>
