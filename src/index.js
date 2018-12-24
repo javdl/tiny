@@ -4,14 +4,12 @@ import './sass/main.scss';
 
 require.context('./img', true, /\.(gif|png|jpe?g|svg)$/i);
 
-const getUrl = window.location;
 const toggle = document.getElementById('navbarToggleButton');
 const header = document.getElementById('header');
 const input = document.getElementById('title-search');
 
-const baseUrl = `${getUrl.protocol}//${getUrl.host}/${
-  getUrl.pathname.split('/')[1]
-}`;
+const { protocol, host, pathname } = window.location;
+const baseUrl = `${protocol}//${host}${pathname.startsWith('/zh/') && '/zh'}`;
 
 fetch(`${baseUrl}/titles.json`)
   .then(response => response.json())
