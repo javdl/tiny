@@ -10,8 +10,9 @@ const input = document.getElementById('title-search');
 
 const { protocol, host, pathname } = window.location;
 
-const relPath = pathname.startsWith('/zh/') ? '/' : '/zh';
-const baseUrl = `${protocol}//${host}${relPath}`;
+const baseUrl = `${protocol}//${host}${
+  pathname.startsWith('/zh/') ? '/zh' : ''
+}`;
 
 fetch(`${baseUrl}/titles.json`)
   .then(response => response.json())
