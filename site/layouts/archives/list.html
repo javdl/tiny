@@ -14,7 +14,7 @@
           <a href="{{ .Permalink }}"><h1>{{ .Title }}</h1></a>
           <div class="mt-4 article-tags">
             {{ range .Params.tags }}
-            <a aria-label="{{.}}" href='{{ "/" | relLangURL}}/tags/{{.}}/'>
+            <a aria-label="{{.}}" href='{{ "/" | relLangURL}}tags/{{.}}/'>
               <svg class="mr-3">
                 <use xlink:href="#{{.}}"/>
               </svg>
