@@ -117,7 +117,7 @@
   <!-- Main Style -->
 
   <!-- Article Style -->
-  {{ if or (eq .Section "posts") (eq .Section "mood") }}
+  {{ if or (eq .Section "posts") (eq .Section "mood") (eq .Section "tags") }}
   {{ $style_article := resources.Get "article.bundle.css" }}
   <style>{{ $style_article.Content | safeCSS }}</style>
   {{ $.Scratch.Set "style_article" . }}

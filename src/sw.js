@@ -10,10 +10,6 @@ workbox.precaching.precache([
     revision: 'index-main'
   },
   {
-    url: '/en/index.html',
-    revision: 'index-en'
-  },
-  {
     url: '/zh/index.html',
     revision: 'index-zh'
   }
@@ -74,10 +70,5 @@ workbox.routing.registerRoute(
   }),
   'GET'
 );
-
-// workbox.routing.registerRoute(
-//   new RegExp('https://valleyease.me'),
-//   workbox.strategies.staleWhileRevalidate()
-// );
 
 workbox.precaching.precacheAndRoute(self.__precacheManifest);

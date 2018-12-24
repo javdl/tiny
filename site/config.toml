@@ -7,7 +7,7 @@ languageCode = "en-us"
 hasCJKLanguage = true
 # Default language to use
 defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = true
+defaultContentLanguageInSubdir = false
 relativeURLs = true
 enableEmoji = true
 # Override "return" link in page footnotes with unicode character.
