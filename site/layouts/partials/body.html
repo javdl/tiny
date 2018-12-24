@@ -1,0 +1,12 @@
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFM4RLJ"
+          height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<section class="sprite" >
+  {{ $tool := resources.Get "sprite_tool.svg"  }}
+  {{ $tool.Content | safeHTML }}
+  {{ $.Scratch.Set "tool" . }}
+</section>
