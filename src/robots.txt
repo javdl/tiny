@@ -9,4 +9,4 @@ Disallow: /*.js$
 Disallow: /*.json$
 Disallow: /*.css$
 
-Sitemap: https://valleyease.me/sitemap.xml
+Sitemap: https://www.valleyease.me/sitemap.xml
