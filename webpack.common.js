@@ -71,7 +71,6 @@ module.exports = {
       lang
     ),
     new CopyWebpackPlugin([
-      { from: path.join(__dirname, 'src/manifest.json'), to: '.' },
       { from: path.join(__dirname, 'src/robots.txt'), to: '.' }
     ])
   ],
