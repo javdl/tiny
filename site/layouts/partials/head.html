@@ -6,7 +6,6 @@
   {{ with $minor.js }}
   <script
     async
-    type="text/javascript"
     crossorigin="anonymous"
     src="{{ relURL . }}"
   ></script>
@@ -109,13 +108,6 @@
   <link
     href="{{ .RSSLink }}"
     rel="alternate"
-    type="application/rss+xml"
-    crossorigin="anonymous"
-    title="{{ .Site.Title }}"
-  />
-  <link
-    href="{{ .RSSLink }}"
-    rel="feed"
     type="application/rss+xml"
     crossorigin="anonymous"
     title="{{ .Site.Title }}"
