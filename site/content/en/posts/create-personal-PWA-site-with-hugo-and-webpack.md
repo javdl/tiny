@@ -256,6 +256,8 @@ Most importantly, it can provide offline experiences within a certain duration.
 I use Lighthouse to test my site and optimize my site according to the reports, which mainly focus on performance, PWA, accessibility, best practices and SEO.
 After step by step repairing, the result is good enough.
 
+![page test](/src/img/posts/20181223_create-personal-PWA-site-with-hugo-and-webpack/pagetest.webp)
+
 ![audits](/src/img/posts/20181223_create-personal-PWA-site-with-hugo-and-webpack/audits.webp)
 
 ### Summary

@@ -243,6 +243,8 @@ Chrome 自带的调试工具可以进行网络调试、性能调试以及服务�
 最后，运用 lighthouse 进行性能测试，并有针对性的进行优化，主要优化方面包括页面性能、渐进式 (PWA)、可访问性、最佳实践、SEO，
 经过循序渐进的优化后达到了满意的程度。
 
+![page test](/src/img/posts/20181223_create-personal-PWA-site-with-hugo-and-webpack/pagetest.webp)
+
 ![audits](/src/img/posts/20181223_create-personal-PWA-site-with-hugo-and-webpack/audits.webp)
 
 ### 总结
