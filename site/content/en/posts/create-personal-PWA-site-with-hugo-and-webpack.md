@@ -206,6 +206,7 @@ optimization strategies at production mode.
 $ http https://www.valleyease.me/
 
 HTTP/1.1 200 OK
+Connection: keep-alive
 Content-Encoding: gzip
 Content-Length: 162
 Content-Type: text/html; charset=UTF-8
