@@ -68,7 +68,6 @@ webpack-hugo
        ├── img/                公共图片文件目录
        ├── sass/               公共样式目录
        ├── 404.html            公共404html
-       ├── manifest.json       pwa配置
        ├── minor.js            副js入口文件
        ├── robots.txt          robots.txt
        ├── sw.js               Service Worker配置
