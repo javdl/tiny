@@ -7,6 +7,5 @@ Disallow: /src/
 
 Disallow: /*.js$
 Disallow: /*.json$
-Disallow: /*.css$
 
 Sitemap: https://www.valleyease.me/sitemap.xml
