@@ -1,4 +1,4 @@
-{{ .Date.Format (.Site.Params.dateFormat | default "Jan 2, 2006") | $.Scratch.Set "subtitle" }}
+{{ .Date.Format (.Site.Params.dateFormat | default "Jan 02, 2006") | $.Scratch.Set "subtitle" }}
 {{ with .FuzzyWordCount }} {{ $.Scratch.Set "reading" . }} {{ end }}
 
 <div class="article-head">
